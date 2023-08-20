@@ -1,14 +1,32 @@
-<p>
-  <mat-form-field appearance="outline">
-    <mat-label>Fill form field</mat-label>
-    <input matInput placeholder="Placeholder">
-    <mat-hint>Hint</mat-hint>
-  </mat-form-field>
-</p>
-<p>
-  <mat-form-field appearance="outline">
-    <mat-label>Outline form field</mat-label>
-    <input matInput placeholder="Placeholder">
-    <mat-hint>Hint</mat-hint>
-  </mat-form-field>
-</p>
+<div class="container">
+  <div class="login" *ngIf="!login">
+    <form [formGroup]="loginForm" class="authForm" (ngSubmit)="logIn()" >
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Login</mat-label>
+          <input matInput formControlName="login">
+          <mat-hint>Enter your Login</mat-hint>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password">
+          <mat-hint>Enter your Password</mat-hint>
+        </mat-form-field>
+      </p>
+      <p>
+        <button mat-raised-button [disabled]="loginForm.invalid" type="submit" color="primary">Login</button>
+      </p>
+    </form>
+  </div>
+
+  <div class="login" *ngIf="login">
+      <p>Current User: </p>
+    <p><strong>{{login}}</strong></p>
+      <p>
+        <button mat-raised-button color="warn" (click)="logOut()">Logout</button>
+      </p>
+  </div>
+</div>
+

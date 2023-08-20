@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {GuardService} from "./services/guard.service";
 
 const routes: Routes = [
   {
@@ -8,8 +9,11 @@ const routes: Routes = [
   },
   {
     path: 'posts',
+    canActivate: [GuardService],
     loadChildren: () => import('./pages/posts/posts.module').then(m => m.PostsModule)
-  }
+  },
+  { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
+  { path: '**', redirectTo: 'auth/login' }
 ];
 
 @NgModule({

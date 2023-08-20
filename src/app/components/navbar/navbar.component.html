@@ -1,0 +1,12 @@
+<mat-toolbar>
+  <button [routerLink]="'/posts'" mat-icon-button>
+    <mat-icon>arrow_back_ios</mat-icon>
+  </button>
+
+  <span class="spacer"></span>
+
+  <button [routerLink]="'/auth/login'" (click)="logOut()" mat-raised-button color="warn">
+    LogOut
+  </button>
+
+</mat-toolbar>

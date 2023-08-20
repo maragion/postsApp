@@ -11,4 +11,6 @@ import { PostsRoutingModule } from './posts-routing.module';
     PostsRoutingModule
   ]
 })
-export class PostsModule { }
+export class PostsModule {
+
+}

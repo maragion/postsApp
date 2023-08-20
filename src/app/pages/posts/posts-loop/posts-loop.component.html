@@ -1,1 +1,18 @@
-<p>posts-loop works!</p>
+<div class="container">
+  <table>
+    <tr class="header">
+      <th class="header__cell">Post Id</th>
+      <th>Title</th>
+      <th>Post</th>
+    </tr>
+    <tr *ngFor="let post of posts; index as i">
+      <td class="id-cell">
+        <a routerLink="/posts/{{i}}" (click)="sendData()">
+          {{post.id}}
+        </a>
+      </td>
+      <td>{{post.title}}</td>
+      <td>{{post.body}}</td>
+    </tr>
+  </table>
+</div>

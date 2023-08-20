@@ -9,9 +9,9 @@ const routes: Routes = [
     path: '',
     component: PostsLayoutComponent,
     children: [
-      {path: "", component: PostsLoopComponent},
-      {path: ":id", component: PostComponent}
-    ]
+      { path: '', component: PostsLoopComponent },
+      { path: ':id', component: PostComponent, }
+    ],
   }
 ];
 
