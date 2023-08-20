@@ -22,3 +22,8 @@ th, td {
 .header__cell {
   min-width: 60px;
 }
+
+tr:hover {
+  background: lightgrey;
+  cursor: pointer;
+}

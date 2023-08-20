@@ -5,11 +5,9 @@
       <th>Title</th>
       <th>Post</th>
     </tr>
-    <tr *ngFor="let post of posts; index as i">
+    <tr routerLink="/posts/{{i}}" (click)="sendData()" *ngFor="let post of posts; index as i">
       <td class="id-cell">
-        <a routerLink="/posts/{{i}}" (click)="sendData()">
           {{post.id}}
-        </a>
       </td>
       <td>{{post.title}}</td>
       <td>{{post.body}}</td>
