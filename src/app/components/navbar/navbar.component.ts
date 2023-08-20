@@ -1,6 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
-import {DataService} from "../../services/data.service";
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +7,7 @@ import {DataService} from "../../services/data.service";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  constructor(private autService: AuthService, private dataService: DataService) {
+  constructor(private autService: AuthService) {
   }
 
 
