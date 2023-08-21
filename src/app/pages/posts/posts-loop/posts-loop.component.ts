@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpService} from "../../../services/http.service";
-import {DataService} from "../../../services/data.service";
+import {post} from "../../../postsInterface";
 
 
 @Component({
@@ -9,24 +9,17 @@ import {DataService} from "../../../services/data.service";
   styleUrls: ['./posts-loop.component.css'],
 })
 
+export class PostsLoopComponent implements OnInit {
 
-export class PostsLoopComponent implements OnInit{
+  posts: post[]
 
-// Todo
-  posts: any
-
-  constructor(private httpService: HttpService, private dataService: DataService) {
+  constructor(private httpService: HttpService) {
     this.posts = []
   }
 
   ngOnInit() {
     this.httpService.getPosts()
-      .subscribe(data => this.posts = data  )
+      .subscribe(data => this.posts = data)
+
   }
-
-  sendData() {
-    this.dataService.setPosts(this.posts)
-  }
-
-
 }

@@ -8,7 +8,7 @@
       <th>Title</th>
       <th>Post</th>
     </tr>
-    <tr routerLink="/posts/{{i}}" (click)="sendData()" *ngFor="let post of posts; index as i">
+    <tr routerLink="/posts/{{i}}" *ngFor="let post of posts; index as i">
       <td class="id-cell">
         {{post.id}}
       </td>
