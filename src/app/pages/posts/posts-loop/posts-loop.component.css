@@ -1,12 +1,21 @@
 .container {
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+
+h1 {
+  display: block;
+  margin-top: 20px;
+  align-self: flex-start;
 }
 
 table {
   border-collapse: collapse;
-  width: 80%;
+  width: 100%;
 }
 
 th, td {

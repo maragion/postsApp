@@ -1,15 +1,17 @@
 <div class="container">
-    <mat-card class="card">
-      <mat-card-header>
-        <mat-card-title-group>
-          <mat-card-title>{{posts[id].title}}</mat-card-title>
-          <mat-card-subtitle>User Id: {{posts[id].userId}}, Post Id: {{posts[id].id}}</mat-card-subtitle>
-        </mat-card-title-group>
-      </mat-card-header>
-      <mat-card-content>
-        {{posts[id].body}}
-      </mat-card-content>
-    </mat-card>
+  <h1>Current Post</h1>
+
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{posts[id].title}}</mat-card-title>
+        <mat-card-subtitle>User Id: {{posts[id].userId}}, Post Id: {{posts[id].id}}</mat-card-subtitle>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      {{posts[id].body}}
+    </mat-card-content>
+  </mat-card>
 
 
 </div>
