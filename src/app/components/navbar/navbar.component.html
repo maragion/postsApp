@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <button [routerLink]="'/posts'" mat-icon-button>
+  <button [routerLink]="'/posts'" class="back-btn" *ngIf="backBtn" mat-icon-button>
     <mat-icon>arrow_back_ios</mat-icon>
   </button>
 
