@@ -1,21 +1,28 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() {}
+
+  constructor() {
+  }
 
   login(login: string, pass: string) {
     let userData: string = login + pass;
     let token: string = this.createFakeToken(userData)
     localStorage.setItem('user', login)
     localStorage.setItem('currentUser', token)
+    return this.checkLogin()
   }
 
   createFakeToken(data: string) {
-    return  window.btoa(data);
+    return window.btoa(data);
+  }
+
+  checkLogin() {
+    return !!localStorage.getItem("currentUser");
   }
 
   logout() {

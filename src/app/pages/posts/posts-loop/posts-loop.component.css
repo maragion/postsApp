@@ -23,7 +23,7 @@ th, td {
   min-width: 60px;
 }
 
-tr:hover {
+tr:not(:first-child):hover {
   background: lightgrey;
   cursor: pointer;
 }

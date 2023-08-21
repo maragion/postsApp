@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   loginForm: FormGroup;
   login: string | null;
+  isLogged: boolean = false
 
   constructor(private autService: AuthService, private router: Router) {
     this.loginForm = new FormGroup({
@@ -24,15 +25,16 @@ export class LoginComponent {
     let login = this.loginForm.value.login;
     let pass = this.loginForm.value.password;
 
-    this.autService.login(login, pass);
-    if(AuthService) {
+    this.isLogged = this.autService.login(login, pass);
+    if(this.isLogged) {
       this.router.navigate(['/posts'])
     }
   }
 
   logOut() {
     this.autService.logout()
-    this.login = null
+    this.login = null;
+    this.isLogged = false
   }
 
 }
