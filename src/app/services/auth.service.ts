@@ -14,15 +14,15 @@ export class AuthService {
     let token: string = this.createFakeToken(userData)
     localStorage.setItem('user', login)
     localStorage.setItem('currentUser', token)
-    return this.checkLogin()
+    return this.isUserLogged()
   }
 
   createFakeToken(data: string) {
     return window.btoa(data);
   }
 
-  checkLogin() {
-    return !!localStorage.getItem("currentUser");
+  isUserLogged() {
+    return localStorage.getItem("currentUser")
   }
 
   logout() {
