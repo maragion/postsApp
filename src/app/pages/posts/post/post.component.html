@@ -1,15 +1,14 @@
 <div class="container">
-  <h1>{{posts[id].title}}</h1>
+  <h1>{{post.title}}</h1>
 
   <mat-card class="card">
     <mat-card-header>
       <mat-card-title-group>
-        <mat-card-title>{{posts[id].title}}</mat-card-title>
-        <mat-card-subtitle>User Id: {{posts[id].userId}}, Post Id: {{posts[id].id}}</mat-card-subtitle>
+        <mat-card-subtitle>User Id: {{post.userId}}, Post Id: {{post.id}}</mat-card-subtitle>
       </mat-card-title-group>
     </mat-card-header>
     <mat-card-content>
-      {{posts[id].body}}
+      {{post.body}}
     </mat-card-content>
   </mat-card>
 
