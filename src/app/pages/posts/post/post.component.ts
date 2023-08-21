@@ -10,13 +10,7 @@ import {HttpService} from "../../../services/http.service";
 })
 export class PostComponent implements OnInit {
 
-  posts: post[] = [];
-  post: post = {
-    "userId": 0,
-    "id": 0,
-    "title": "title",
-    "body": 'body'
-  }
+  post: post | null = null
   id: number;
 
   constructor(private route: ActivatedRoute, private httpService: HttpService) {

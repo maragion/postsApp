@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpService} from "../../../services/http.service";
 import {post} from "../../../postsInterface";
+import {HttpEvent} from "@angular/common/http";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -11,15 +13,20 @@ import {post} from "../../../postsInterface";
 
 export class PostsLoopComponent implements OnInit {
 
-  posts: post[]
+  posts: post[] | null = null;
 
-  constructor(private httpService: HttpService) {
-    this.posts = []
+  constructor(private httpService: HttpService, private router: Router) {
+
   }
 
   ngOnInit() {
     this.httpService.getPosts()
       .subscribe(data => this.posts = data)
+
+  }
+
+  navigateToPost($event: HttpEvent<number>) {
+    this.router.navigate([`/posts/`, $event])
 
   }
 }

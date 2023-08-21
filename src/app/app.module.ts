@@ -14,6 +14,8 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {HttpClientModule} from "@angular/common/http";
+import { TableComponent } from './components/table/table.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -28,18 +30,16 @@ import {HttpClientModule} from "@angular/common/http";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
     MatTableModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    TableComponent,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule{
-
-
-}
+export class AppModule{ }

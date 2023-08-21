@@ -1,0 +1,14 @@
+<table>
+  <tr class="header">
+    <th class="header__cell">Post Id</th>
+    <th>Title</th>
+    <th>Post</th>
+  </tr>
+  <tr *ngFor="let post of data;" (click)="postId.emit(post.id)">
+    <td class="id-cell">
+      {{post.id}}
+    </td>
+    <td>{{post.title}}</td>
+    <td>{{post.body}}</td>
+  </tr>
+</table>

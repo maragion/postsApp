@@ -18,7 +18,6 @@ export class HttpService {
   }
 
   getPostById(id: number): Observable<post> {
-    return this.http.get<post>(this.postsUrl + (id + 1))
+    return this.http.get<post>(this.postsUrl + id)
   }
-
 }
