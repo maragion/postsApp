@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../../services/auth.service";
-import { Router } from '@angular/router';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   loginForm: FormGroup;
   login: string | null;
-  isLogged: boolean = false
+  isLogged: string | null = null;
 
   constructor(private autService: AuthService, private router: Router) {
     this.loginForm = new FormGroup({
@@ -26,7 +26,7 @@ export class LoginComponent {
     let pass = this.loginForm.value.password;
 
     this.isLogged = this.autService.login(login, pass);
-    if(this.isLogged) {
+    if (this.isLogged) {
       this.router.navigate(['/posts'])
     }
   }
@@ -34,7 +34,7 @@ export class LoginComponent {
   logOut() {
     this.autService.logout()
     this.login = null;
-    this.isLogged = false
+    this.isLogged = null
   }
 
 }
